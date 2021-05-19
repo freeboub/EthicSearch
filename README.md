@@ -3,7 +3,6 @@
 ### What is this repository for? ###
 
 * Ethic search is a simple search bar which redirect your search on your favorite browser.
-* https://bitbucket.org/Boub/lilosearchbar
 
 ### Contribution guidelines ###
 
@@ -11,5 +10,4 @@
 
 ### Who do I talk to? ###
 
-* This software has been done by Olivier Bouillet under beerware licence v42
-* contact: freeboub@gmail.com
+* This software has been done by myself under beerware licence v42
