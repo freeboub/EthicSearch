@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_margin="@dimen/margin_widget"
+    android:paddingTop="@dimen/margin_small"
+    android:paddingBottom="@dimen/margin_small"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:background="@drawable/widget_background">
+
+        <!-- preadd image -->
+        <ImageButton android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_margin="@dimen/margin_tiny"
+            android:src="@mipmap/yin_yang_small"
+            android:background="@android:color/transparent"
+            android:id="@+id/engine_button"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+
+        <!-- real default layout -->
+        <TextView
+            android:id="@+id/search_text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="@dimen/margin_tiny"
+            android:textSize="@dimen/widget_text_size"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/text_default_widget_configure"
+            android:textColor="@color/text_color_hint">
+        </TextView>
+
+</FrameLayout>

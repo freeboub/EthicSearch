@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Meta-dimension that switches on screen size -->
+
+    <dimen name="margin_page">@dimen/margin_tiny</dimen>
+    <dimen name="margin_widget">@dimen/margin_tiny</dimen>
+    <dimen name="widget_text_size">25sp</dimen>
+    <dimen name="widget_text_size_small">10sp</dimen>
+    <dimen name="text_size">25sp</dimen>
+
+    <dimen name="text_size_big">30sp</dimen>
+
+    <dimen name="text_size_proposition">1sp</dimen>
+
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_huge">64dp</dimen>
+
+    <!-- Semantic definitions -->
+
+    <dimen name="margin_horizontal_page">@dimen/margin_tiny</dimen>
+    <dimen name="margin_vertical_page">@dimen/margin_tiny</dimen>
+
+</resources>

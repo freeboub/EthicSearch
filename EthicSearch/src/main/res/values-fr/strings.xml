@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_search_hint">Recherche </string>
+    <string name="text_widget">Widget non configuré, remplacez le widget svp</string>
+    <string name="text_search_vocal">Parler pour rechercher</string>
+
+    <string name="text_widget_configure">Ajouter le widget</string>
+    <string name="text_app_configure">Configurer l\'application</string>
+    <string name="text_configure_widget">Configuration du widget</string>
+    <string name="text_enable_voice_search">Racourci commande vocale</string>
+    <string name="text_error_no_voice_reco">Aucune reconaissance vocal disponible</string>
+    <string name="text_configure_search">Choix du moteur de recherche</string>
+
+    <string name="text_default_widget_configure">Configurer</string>
+    <string name="text_clear">Effacer</string>
+    <string name="warning_no_engine_selected">Sélectionnez un moteur de recherche</string>
+    <string name="warning_voice_reco_fail">Voice recognition fail</string>
+    <string name="tips_clear_search_field">Effacez la recherche</string>
+    <string name="text_no_browser">Aucun navigateur installé, téléchargez Firefox !</string>
+    <string name="text_error_cannot_open_play_store">Cannot open browser or playstore. What you you doing with your device ?</string>
+    <string name="text_error_redirect_to_play_store">Cannot open web browser. You need to install one, Firefox for exemple !</string>
+
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="10dp"
+    android:orientation="horizontal"
+    android:padding="@dimen/margin_tiny"
+    android:id="@+id/configure_list_layout">
+
+    <RadioButton
+        android:id="@+id/configure_list_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/configure_list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/text_size"
+        android:layout_toEndOf="@+id/configure_list_checkbox"
+        android:layout_toRightOf="@+id/configure_list_checkbox" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <!--Grey Spinner-->
+        <ProgressBar
+            android:id="@+id/configure_download_progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            />
+
+        <ImageView
+            android:id="@+id/configure_list_image"
+            android:visibility="invisible"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="" />
+    </FrameLayout>
+</RelativeLayout>

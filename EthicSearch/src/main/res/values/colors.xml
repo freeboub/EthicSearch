@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="activity_background">#80000000</color>
+    <color name="background_transparent">@android:color/transparent</color>
+    <color name="color_text_background">#A9000000</color>
+    <color name="text_color_hint">#FFC0C0C0</color>
+    <color name="text_color">#FFFFFFFF</color>
+    <color name="button_clear_background">#acff0008</color>
+</resources>

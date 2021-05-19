@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_url_search" translatable="false">https://search.lilo.org/</string>
+    <string name="default_url_search_destinaton" translatable="false">https://search.lilo.org/searchweb.php?q=</string>
+
+    <string name="app_name" translatable="false">EthicSearch</string>
+    <string name="text_search_hint">Search </string>
+    <string name="text_widget">Not configured, please reinstall widget</string>
+    <string name="text_search_vocal">Talk to search</string>
+    <string name="text_widget_configure">Add Widget</string>
+    <string name="text_app_configure">Configure application</string>
+    <string name="text_enable_voice_search">Enable voice search shortcut</string>
+    <string name="text_error_no_voice_reco">No voice recognition available</string>
+    <string name="text_configure_widget">Widget configuration</string>
+    <string name="text_configure_search">Choose search engine</string>
+    <string name="text_default_widget_configure">Configure</string>
+    <string name="text_clear">clear</string>
+    <string name="warning_no_engine_selected">No engine selected</string>
+    <string name="warning_voice_reco_fail">Voice recognition fail</string>
+    <string name="tips_clear_search_field">Clear search field</string>
+    <string name="text_no_browser">No browser installed, please install Firefox !</string>
+    <string name="text_error_redirect_to_play_store">Cannot open web browser. You need to install one, Firefox for example !</string>
+    <string name="text_error_cannot_open_play_store">Cannot open web browser or playstore. What are you doing with your device ?</string>
+</resources>

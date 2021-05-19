@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/margin_medium"
+    android:layout_centerVertical="true"
+    android:layout_centerInParent="true"
+    android:background="@android:color/transparent"
+    android:paddingStart="@dimen/margin_tiny"
+    android:paddingEnd="@dimen/margin_tiny"
+    android:paddingTop="@dimen/margin_tiny"
+    android:paddingBottom="@dimen/margin_tiny"
+    android:textSize="20sp"
+    android:gravity="center_vertical"/>

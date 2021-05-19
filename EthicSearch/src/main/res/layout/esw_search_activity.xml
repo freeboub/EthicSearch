@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/button_clear"
+    android:layout_alignParentTop="true" >
+
+    <RelativeLayout
+        android:id="@+id/search_activity_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_clear"
+        android:layout_margin="10dip"
+        android:layout_alignParentTop="true"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/widget_background"
+        android:id="@+id/search_text_group">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/widget_background"
+            android:id="@+id/search_text_background">
+
+            <com.boub.ethicsearchwidget.ESWSearchText
+                android:background="@android:color/transparent"
+                android:completionThreshold="1"
+                android:hint="@string/text_search_hint"
+                android:id="@+id/search_text"
+                android:imeOptions="actionSearch|flagNoFullscreen"
+                android:inputType="textAutoComplete"
+                android:layout_gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:popupBackground="@color/background_transparent"
+                android:singleLine="true"
+                android:textColorHint="@color/text_color_hint"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size"
+                android:layout_weight="0"
+                android:layout_margin="@dimen/margin_small"
+                android:focusable="true"
+                android:textIsSelectable="true"
+                />
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/result_list"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:layout_weight="0"
+            >
+        </ListView>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textAlignment="center"
+        android:text="@string/text_clear"
+        android:textColorHighlight="@android:color/white"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:gravity="center"
+        android:background="@color/button_clear_background"
+        android:id="@+id/button_clear"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/tips_clear_search_field"
+        android:textSize="@dimen/text_size_big" />
+
+</RelativeLayout>

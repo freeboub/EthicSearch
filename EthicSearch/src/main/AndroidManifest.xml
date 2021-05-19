@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.boub.ethicsearchwidget"
+    android:installLocation="internalOnly">
+
+    <uses-sdk
+        tools:overrideLibrary="androidx.arch.core, androidx.lifecycle.livedata.core, androidx.lifecycle.livedata, androidx.interpolator, androidx.core.ktx, androidx.constraintlayout.widget, androidx.appcompat, androidx.fragment, androidx.appcompat.resources, androidx.drawerlayout, androidx.viewpage, androidx.viewpager, androidx.loader, androidx.activity, androidx.vectordrawable.animated, androidx.vectordrawable, androidx.savedstate, androidx.customview, androidx.core, androidx.versionedparcelable, androidx.lifecycle.viewmodel, androidx.cursoradapter, androidx.lifecycle"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name">
+
+        <!-- Activity to configure the app -->
+        <activity
+            android:name=".ESWAppWidgetConfigure"
+            android:configChanges="orientation"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity> <!-- Activity to input search text and get results -->
+        <activity
+            android:name=".ESWSearchActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/Widget.DescriptionBar"
+            android:windowSoftInputMode="adjustNothing|stateVisible">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- The widget -->
+        <receiver
+            android:name=".ESWAppWidgetProvider"
+            android:icon="@drawable/widget_preview"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.boub.lilo.ACTION_CONFIGURE_WIDGET" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_standard_search_bar" />
+        </receiver>
+    </application>
+
+</manifest>

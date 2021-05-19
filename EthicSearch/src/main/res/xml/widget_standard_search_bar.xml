@@ -1,0 +1,10 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="41dp"
+    android:minHeight="41dp"
+    android:updatePeriodMillis="10000"
+    android:previewImage="@drawable/widget_preview"
+    android:initialLayout="@layout/esw_layout_standard_search_bar"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen|searchbox">
+</appwidget-provider>
+
