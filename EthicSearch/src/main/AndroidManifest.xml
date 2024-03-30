@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.boub.ethicsearchwidget"
     android:installLocation="internalOnly">
 
     <uses-sdk
@@ -19,7 +18,8 @@
         <activity
             android:name=".ESWAppWidgetConfigure"
             android:configChanges="orientation"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
@@ -28,7 +28,8 @@
             android:name=".ESWSearchActivity"
             android:launchMode="singleInstance"
             android:theme="@style/Widget.DescriptionBar"
-            android:windowSoftInputMode="adjustNothing|stateVisible">
+            android:windowSoftInputMode="adjustNothing|stateVisible"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +39,8 @@
         <receiver
             android:name=".ESWAppWidgetProvider"
             android:icon="@drawable/widget_preview"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.boub.lilo.ACTION_CONFIGURE_WIDGET" />
