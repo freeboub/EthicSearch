@@ -32,27 +32,27 @@ internal class ESWSearchConfiguration private constructor() {
         // The view holder associated to the item
         var mHolder: ConfigureViewHolder? = null
 
-        fun getLogoPath(_context: Context): String {
-            return _context.cacheDir.absolutePath + mLocalImage
+        fun getLogoPath(context: Context): String {
+            return context.cacheDir.absolutePath + mLocalImage
         }
 
-        fun getLogoVoicePath(_context: Context): String {
-            return _context.cacheDir.absolutePath + "voice_" + mLocalImage
+        fun getLogoVoicePath(context: Context): String {
+            return context.cacheDir.absolutePath + "voice_" + mLocalImage
         }
 
-        fun getLogoBitmap(_context: Context): Bitmap {
+        fun getLogoBitmap(context: Context): Bitmap {
             return if (mResourceId != -1) {
                 BitmapFactory.decodeResource(
-                    _context.resources,
+                    context.resources,
                     mResourceId
                 )
             } else {
-                BitmapFactory.decodeFile(getLogoPath(_context))
+                BitmapFactory.decodeFile(getLogoPath(context))
             }
         }
 
-        fun getLogoVoiceBitmap(_context: Context): Bitmap {
-            return BitmapFactory.decodeFile(getLogoVoicePath(_context))
+        fun getLogoVoiceBitmap(context: Context): Bitmap {
+            return BitmapFactory.decodeFile(getLogoVoicePath(context))
         }
     }
 

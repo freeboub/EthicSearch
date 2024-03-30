@@ -14,7 +14,6 @@ import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -36,7 +35,7 @@ class ESWAppWidgetConfigure : Activity() {
     private lateinit var mCheckBoxEnableVoiceSearch : CheckBox
 
     // The View Holder is handling a line of the item list
-    internal class ConfigureViewHolder constructor( convertView : View, searchProvider : ESWSearchProvider ) {
+    internal class ConfigureViewHolder( convertView : View, searchProvider : ESWSearchProvider ) {
 
         // Name of the search engine
         val text: TextView = convertView.findViewById(R.id.configure_list_name)
@@ -67,7 +66,7 @@ class ESWAppWidgetConfigure : Activity() {
     }
 
     // Adapter for the list of configuration provider
-    private inner class ConfigureListAdapter constructor(
+    private inner class ConfigureListAdapter(
         context: Context, textViewResourceId: Int,
         searchProviderList: ArrayList<ESWSearchProvider?>
     ) : ArrayAdapter<ESWSearchProvider?>(context, textViewResourceId, searchProviderList) {
@@ -76,7 +75,6 @@ class ESWAppWidgetConfigure : Activity() {
         private val mSearchProviderList: ArrayList<ESWSearchProvider> = ArrayList()
         private val layoutInflater : LayoutInflater = getSystemService( Context.LAYOUT_INFLATER_SERVICE ) as LayoutInflater
         private var mSelectedRadioButton: RadioButton? = null
-
 
         @SuppressLint("InflateParams")
         override fun getView(
@@ -220,9 +218,7 @@ class ESWAppWidgetConfigure : Activity() {
             AppWidgetManager.getInstance(applicationContext)
         val remoteViews = RemoteViews(packageName, layoutId)
         appWidgetManager.updateAppWidget(mAppWidgetId, remoteViews)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            appWidgetManager.notifyAppWidgetViewDataChanged(mAppWidgetId, layoutId)
-        }
+        appWidgetManager.notifyAppWidgetViewDataChanged(mAppWidgetId, layoutId)
         ESWAppWidgetProvider.forceUpdate(applicationContext, mAppWidgetId)
 
         val intent = Intent(applicationContext, ESWSearchActivity::class.java)

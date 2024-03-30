@@ -52,7 +52,7 @@ class ESWAppWidgetProvider : AppWidgetProvider() {
             remoteViews.setViewVisibility(R.id.engine_button, View.VISIBLE)
 
             if (ESWPersistentConfiguration.isVoiceSearchEnabled(context, widgetId)) {
-                intent = getPendingSelfIntent(context, ACTION_BOUTTON_VOICE_SEARCH + widgetId)
+                intent = getPendingSelfIntent(context, ACTION_BUTTON_VOICE_SEARCH + widgetId)
                 bitmap = prov.getLogoVoiceBitmap(context)
             } else {
                 intent = getPendingSelfIntent(context, ACTION_TEXT_CLICK + widgetId)
@@ -111,9 +111,9 @@ class ESWAppWidgetProvider : AppWidgetProvider() {
         val strAction = intent.action
         if (strAction != null) {
             when {
-                strAction.startsWith(ACTION_BOUTTON_CLICK) -> {
+                strAction.startsWith(ACTION_BUTTON_CLICK) -> {
                     val activityIntent = Intent(Intent.ACTION_VIEW)
-                    val widgetId = intent.action!!.replace(ACTION_BOUTTON_CLICK, "").toInt()
+                    val widgetId = intent.action!!.replace(ACTION_BUTTON_CLICK, "").toInt()
                     val providerId = ESWPersistentConfiguration.getSearchProvider(context, widgetId)
                     activityIntent.data = Uri.parse( ESWSearchConfiguration.instance().getProvider(providerId).webSite )
                     activityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -126,11 +126,11 @@ class ESWAppWidgetProvider : AppWidgetProvider() {
                     activityIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId)
                     context.startActivity(activityIntent)
                 }
-                strAction.startsWith(ACTION_BOUTTON_VOICE_SEARCH) -> {
+                strAction.startsWith(ACTION_BUTTON_VOICE_SEARCH) -> {
                     val activityIntent = Intent(context, ESWSearchActivity::class.java)
                     activityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     val widgetId =
-                        intent.action!!.replace(ACTION_BOUTTON_VOICE_SEARCH, "").toInt()
+                        intent.action!!.replace(ACTION_BUTTON_VOICE_SEARCH, "").toInt()
                     activityIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId)
                     activityIntent.action = ESWSearchActivity.INTENT_ACTION_VOICE_SEARCH + widgetId
                     context.startActivity(activityIntent)
@@ -147,9 +147,9 @@ class ESWAppWidgetProvider : AppWidgetProvider() {
     }
 
     companion object {
-        private const val ACTION_BOUTTON_CLICK = "com.boub.lilo.ACTION_BOUTTON_CLICK"
+        private const val ACTION_BUTTON_CLICK = "com.boub.lilo.ACTION_BUTTON_CLICK"
         private const val ACTION_TEXT_CLICK = "com.boub.lilo.ACTION_TEXT_CLICK"
-        private const val ACTION_BOUTTON_VOICE_SEARCH = "com.boub.lilo.ACTION_VOICE_SEARCH_CLICK"
+        private const val ACTION_BUTTON_VOICE_SEARCH = "com.boub.lilo.ACTION_VOICE_SEARCH_CLICK"
         private const val ACTION_CONFIGURE_WIDGET = "com.boub.lilo.ACTION_CONFIGURE_WIDGET"
 
         var sAppWidgetManager: AppWidgetManager? = null

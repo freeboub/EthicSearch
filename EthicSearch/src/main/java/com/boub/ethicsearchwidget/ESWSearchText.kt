@@ -18,6 +18,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.util.AttributeSet
+import android.util.Log
 import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
@@ -35,8 +36,9 @@ import java.net.URLEncoder
 @SuppressLint("AppCompatCustomView")
 class ESWSearchText : EditText, OnEditorActionListener, OnTouchListener {
 
-    private var mBrowserlaunched = false
+    private var mBrowserLaunched = false
     private var mWidgetId = 0
+    private var tag = "ESWSearchText"
 
     var listener : OnTextChangedListener? = null
 
@@ -68,9 +70,9 @@ class ESWSearchText : EditText, OnEditorActionListener, OnTouchListener {
         launchCompletion(s.toString())
     }
 
-    fun resume(_widgetId: Int) {
-        mWidgetId = _widgetId
-        mBrowserlaunched = false
+    fun resume(widgetId: Int) {
+        mWidgetId = widgetId
+        mBrowserLaunched = false
     }
 
     @JvmOverloads
@@ -99,7 +101,7 @@ class ESWSearchText : EditText, OnEditorActionListener, OnTouchListener {
 
     private fun launchSearch(str: String) {
         // this test is to avoid double browser launch
-        if (!mBrowserlaunched && str.isNotEmpty() ) {
+        if (!mBrowserLaunched && str.isNotEmpty() ) {
 
             /// start browser
             val url = ESWPersistentConfiguration.getSearchProvider(
@@ -113,7 +115,7 @@ class ESWSearchText : EditText, OnEditorActionListener, OnTouchListener {
             } catch (e: UnsupportedEncodingException) {
                 e.printStackTrace()
             }
-            mBrowserlaunched = true
+            mBrowserLaunched = true
 
             intent.data = Uri.parse(prov.mSearchUrl + strEncoded)
             try {
@@ -128,7 +130,7 @@ class ESWSearchText : EditText, OnEditorActionListener, OnTouchListener {
             }
             // allow next browser call in 1 second
             val handler = Handler(Looper.myLooper()!!)
-            handler.postDelayed({ mBrowserlaunched = false }, 1000)
+            handler.postDelayed({ mBrowserLaunched = false }, 1000)
         }
     }
 
@@ -140,6 +142,7 @@ class ESWSearchText : EditText, OnEditorActionListener, OnTouchListener {
             context.startActivity( intent )
             return true
         } catch ( e: ActivityNotFoundException) {
+            Log.w(tag, "cannot open google play store")
         }
         return false
     }
