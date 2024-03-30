@@ -16,6 +16,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Handler
+import android.os.Looper
 import android.util.AttributeSet
 import android.view.KeyEvent
 import android.view.MotionEvent
@@ -126,7 +127,8 @@ class ESWSearchText : EditText, OnEditorActionListener, OnTouchListener {
                 }
             }
             // allow next browser call in 1 second
-            Handler().postDelayed({ mBrowserlaunched = false }, 1000)
+            val handler = Handler(Looper.myLooper()!!)
+            handler.postDelayed({ mBrowserlaunched = false }, 1000)
         }
     }
 
