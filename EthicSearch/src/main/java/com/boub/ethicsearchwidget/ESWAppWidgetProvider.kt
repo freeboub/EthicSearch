@@ -30,7 +30,7 @@ class ESWAppWidgetProvider : AppWidgetProvider() {
         // An explicit intent directed at the current class (the "self").
         val intent = Intent(context, javaClass)
         intent.action = action
-        return PendingIntent.getBroadcast(context, 0, intent, 0)
+        return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
     }
 
     private fun setupWidget(
