@@ -126,13 +126,25 @@ internal class ESWSearchConfiguration private constructor() {
             R.drawable.logo_youcare
         )
 
+        /*
+        service seems to be done
+        https://www.ekoru.org/
         addEntry(
-            "Preeska",
-            "https://www.preeska.com/assets/img/logo.png",
-            "https://www.preeska.com/search?q=",
-            "https://www.preeska.com",
-            "preeska.png",
-            R.drawable.logo_preeska
+            "Ekoru",
+            "https://scontent-cdg4-1.xx.fbcdn.net/v/t39.30808-1/310280022_462887559204408_6182137617092224728_n.png?stp=c0.0.197.195a_dst-png&_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YswplaYZ9qIAX987QEt&_nc_ht=scontent-cdg4-1.xx&oh=00_AfCrmIZEH6LlWa_3k6QcyAvEH9e35EDlutdQIzpcZDNbKQ&oe=660F3EE1",
+            "https://www.ekoru.org/?q=",
+            "https://www.ekoru.org/",
+            "logo_ekoru.png",
+            R.drawable.logo_ecogine
+        )*/
+
+        addEntry(
+            "Good-search",
+            "https://good-search.org/index.php",
+            "https://good-search.org/en/search/?q=",
+            "https://good-search.org/",
+            "logo_goodsearch.png",
+            R.drawable.logo_goodsearch
         )
 
         addEntry(
